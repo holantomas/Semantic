@@ -1,0 +1,14 @@
+{
+    "name": "holantomas/semantic",
+    "description": "Tool for create semantic websites",
+    "type": "library",
+    "license": "BSD-3-Clause, GPL-2.0, GPL-3.0",
+    "authors": [
+        {
+            "name": "Tomáš Holan",
+            "email": "mail@tomasholan.eu"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
