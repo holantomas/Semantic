@@ -12,7 +12,7 @@ Installation
 The best way to install is using [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require holanttomas/semantic
+$ composer require holantomas/semantic
 ```
 
 Register extension in neon config
