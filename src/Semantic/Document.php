@@ -3,7 +3,7 @@
 
 namespace holantomas\Semantic;
 
-use holantomas\Semantic\Bridges\Tracy\DocumentPanel;
+use holantomas\Semantic\Bridges\Tracy\SemanticPanel;
 use Nette\Application\Application;
 use Nette\Application\UI\Presenter;
 
@@ -149,7 +149,7 @@ class Document implements IDocument {
 		$presenter->onShutdown[] = function(Presenter $sender) {
 			/** @var IDocument $doc */
 			$doc = $sender->getTemplate()->document;
-			$doc->check(!DocumentPanel::isEnabled());
+			$doc->check(!SemanticPanel::isEnabled());
 		};
 	}
 
