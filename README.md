@@ -1,5 +1,8 @@
-Quickstart
+holantomas/Semantic
 ==========
+
+[![Downloads this Month](https://img.shields.io/packagist/dm/holantomas/semantic.svg)](https://packagist.org/packages/holantomas/semantic)
+[![Latest Stable Version](https://poser.pugx.org/holantomas/semantic/v/stable)](https://github.com/holantomas/semantic/releases)
 
 This extension is here to provide HTML Document api for Nette Framework.
 
