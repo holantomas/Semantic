@@ -39,7 +39,7 @@ class SemanticPanel implements IBarPanel {
 	public function getTab() {
 		$content = '<img width="16" height="16" src="data:image/png;base64,' . base64_encode(file_get_contents(__DIR__ . '/icon.png')) . '" />';
 
-		if ($this->document->check(FALSE)) {
+		if (!$this->document->check(FALSE)) {
 			$content .= '<span class="tracy-label">error</span>';
 		}
 
