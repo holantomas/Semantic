@@ -47,14 +47,14 @@ interface IDocument {
 	 * Aka H1 tag
 	 * @return string
 	 */
-	public function getHeader();
+	public function getHeading();
 
 	/**
 	 * Aka H1 tag
-	 * @param string $header
+	 * @param string $heading
 	 * @return IDocument
 	 */
-	public function setHeader($header);
+	public function setHeading($heading);
 
 	/**
 	 * @param bool $withWarnings

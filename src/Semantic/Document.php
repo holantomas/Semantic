@@ -25,7 +25,7 @@ class Document implements IDocument {
 	private $keywords = '';
 
 	/** @var string */
-	private $header = '';
+	private $heading = '';
 
 	/** @var bool */
 	private $isRegistered = FALSE;
@@ -83,17 +83,17 @@ class Document implements IDocument {
 	 * Aka H1 tag
 	 * @return string
 	 */
-	public function getHeader() {
-		return $this->header;
+	public function getHeading() {
+		return $this->heading;
 	}
 
 	/**
 	 * Aka H1 tag
-	 * @param string $header
+	 * @param string $heading
 	 * @return self
 	 */
-	public function setHeader($header) {
-		$this->header = $header;
+	public function setHeading($heading) {
+		$this->heading = $heading;
 		return $this;
 	}
 
@@ -123,7 +123,7 @@ class Document implements IDocument {
 			return FALSE;
 		}
 
-		if (empty($this->getHeader())) {
+		if (empty($this->getHeading())) {
 			if ($withWarnings) {
 				trigger_error("Property header is not set", E_USER_WARNING);
 			}
