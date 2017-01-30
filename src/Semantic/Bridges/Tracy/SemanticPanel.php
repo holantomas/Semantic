@@ -62,7 +62,7 @@ class SemanticPanel implements IBarPanel {
 		$content .= "<tr" . (empty($doc->getTitle()) ? ' class="warning"' : '') . "><th>title</th><td>{$doc->getTitle()}</td></tr>";
 		$content .= "<tr" . (empty($doc->getDescription()) ? ' class="warning"' : '') . "><th>description</th><td>{$doc->getDescription()}</td></tr>";
 		$content .= "<tr" . (empty($doc->getKeywords()) ? ' class="warning"' : '') . "><th>keywords</th><td>{$doc->getKeywords()}</td></tr>";
-		$content .= "<tr" . (empty($doc->getHeading()) ? ' class="warning"' : '') . "><th>header/h1</th><td>{$doc->getHeading()}</td></tr>";
+		$content .= "<tr" . (empty($doc->getHeading()) ? ' class="warning"' : '') . "><th>heading/h1</th><td>{$doc->getHeading()}</td></tr>";
 		$content .= '</tbody>';
 		$content .= '</table>';
 
