@@ -56,10 +56,4 @@ interface IDocument {
 	 */
 	public function setHeading($heading);
 
-	/**
-	 * @param bool $withWarnings
-	 * @return bool
-	 */
-	public function check($withWarnings = TRUE);
-
 }
