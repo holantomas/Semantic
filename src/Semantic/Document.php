@@ -15,16 +15,32 @@ use Nette\Application\UI\Presenter;
  */
 class Document implements IDocument {
 
-	/** @var string */
+	/**
+	 * @var string
+	 * @required
+	 * @panel
+	 */
 	private $title = '';
 
-	/** @var string */
+	/**
+	 * @var string
+	 * @required
+	 * @panel
+	 */
 	private $description = '';
 
-	/** @var string */
+	/**
+	 * @var string
+	 * @required
+	 * @panel
+	 */
 	private $keywords = '';
 
-	/** @var string */
+	/**
+	 * @var string
+	 * @required
+	 * @panel
+	 */
 	private $heading = '';
 
 	/** @var bool */
@@ -95,62 +111,6 @@ class Document implements IDocument {
 	public function setHeading($heading) {
 		$this->heading = $heading;
 		return $this;
-	}
-
-	/**
-	 * @param bool $withWarnings
-	 * @return bool
-	 */
-	public function check($withWarnings = TRUE) {
-		if (empty($this->getTitle())) {
-			if ($withWarnings) {
-				trigger_error("Property title is not set", E_USER_WARNING);
-			}
-			return FALSE;
-		}
-
-		if (empty($this->getDescription())) {
-			if ($withWarnings) {
-				trigger_error("Property description is not set", E_USER_WARNING);
-			}
-			return FALSE;
-		}
-
-		if (empty($this->getKeywords())) {
-			if ($withWarnings) {
-				trigger_error("Property keywords is not set", E_USER_WARNING);
-			}
-			return FALSE;
-		}
-
-		if (empty($this->getHeading())) {
-			if ($withWarnings) {
-				trigger_error("Property header is not set", E_USER_WARNING);
-			}
-			return FALSE;
-		}
-
-		return TRUE;
-	}
-
-	/**
-	 * Application onPresenter callback
-	 *
-	 * @param Application $sender
-	 * @param Presenter   $presenter
-	 */
-	public function register(Application $sender, Presenter $presenter){
-		if ($this->isRegistered) {
-			return;
-		}
-		$presenter->getTemplate()->document = $this;
-		$this->isRegistered = TRUE;
-
-		$presenter->onShutdown[] = function(Presenter $sender) {
-			/** @var IDocument $doc */
-			$doc = $sender->getTemplate()->document;
-			$doc->check(!SemanticPanel::isEnabled());
-		};
 	}
 
 
