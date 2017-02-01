@@ -22,16 +22,59 @@ Register extension in neon config
 
 ```yml
 extensions:
-	document: holantomas\Semantic\Bridges\Nette\SemanticExtension
+	semantic: holantomas\Semantic\Bridges\Nette\SemanticExtension
 ```
 
-Enable **Tracy** panel(optional) - if is Tracy panel disabled, document throws `E_USER_WARNING` after render
+You can setup your own `IDocument` implementation.
+
+```yml
+semantic:
+	document: namespace\to\your\document # Or false to disble it
+```
+
+If you have your implementation of `IDocument` you have to specify `@required` annotation for document properties which will cause warnings when are empty or `NULL`. You don't have to care about properties visibility
+```php
+
+use holantomas\Semantic\IDocument;
+
+class MyDocument implements IDocument {
+
+	/**
+	 * @var string
+	 * @required - this make property required (throws warnings)
+	 */
+	private $title = '';
+
+}
+```
+
+Enable **Tracy** panel(optional) - if is Tracy panel disabled, document throws `E_USER_WARNING` after render on `@required` properties which are `NULL` or empty
 
 ```yml
 tracy:
 	bar:
 		- holantomas\Semantic\Bridges\Tracy\SemanticPanel
 ```
+
+For show properties in panel you have to specify `@panel` on every property.
+
+```php
+
+use holantomas\Semantic\IDocument;
+
+class MyDocument implements IDocument {
+
+	/**
+	 * @var string
+	 * @required - this make property required (throws warnings)
+	 * @panel - this make property show in tracy panel
+	 */
+	private $title = '';
+
+}
+```
+
+_annotations can be customized by `Checker::$REQUIREMENT_ANNOTATION` and `SemanticPanel::$RENDER_ANNOTATION`_
 
 
 Usage
