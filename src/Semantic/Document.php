@@ -3,10 +3,6 @@
 
 namespace holantomas\Semantic;
 
-use holantomas\Semantic\Bridges\Tracy\SemanticPanel;
-use Nette\Application\Application;
-use Nette\Application\UI\Presenter;
-
 
 /**
  * @author       Tomáš Holan <mail@tomasholan.eu>, Tomáš Holan [www.tomasholan.eu]
@@ -42,10 +38,6 @@ class Document implements IDocument {
 	 * @panel
 	 */
 	private $heading = '';
-
-	/** @var bool */
-	private $isRegistered = FALSE;
-
 
 	/**
 	 * @return string
